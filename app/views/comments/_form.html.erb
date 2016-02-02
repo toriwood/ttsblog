@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
+   <div class="hide-me">
+   
+   </div>
   <div class="hide-me">
     <%= f.number_field :blog_post_id, value: @blog_post.id %>
+    <%= f.number_field :user_id, value: current_user.id %>
   </div>
   <div class="field">
     <%= f.label :comment_entry %><br>
