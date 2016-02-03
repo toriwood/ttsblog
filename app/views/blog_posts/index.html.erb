@@ -10,7 +10,7 @@
         <%= link_to blog_post.title, blog_post %>
       </div>
       <div class="panel-body">
-        by <%= blog_post.author %>
+        by <%= blog_post.user.username %>
         <p>
           <%= blog_post.blog_entry[0..250] %>
           <% if blog_post.blog_entry. length > 250 %>
