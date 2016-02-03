@@ -1,16 +1,13 @@
-<p id="notice"><%= notice %></p>
+<h1>Your Posts</h1>
 
-<h1>Current Blog Posts</h1>
-
-<div class="row">
-  <% @blog_posts.each do |blog_post| %>
-  <div class="col-md-6">
+<% current_user.blog_posts.each do |blog_post| %>
+  <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading">
         <%= link_to blog_post.title, blog_post %>
       </div>
       <div class="panel-body">
-        by <%= link_to blog_post.user.username, user_posts_path(id: blog_post.user.id) %>
+        by <%= blog_post.user.username %>
         <p>
           <%= blog_post.blog_entry[0..250] %>
           <% if blog_post.blog_entry. length > 250 %>
@@ -27,6 +24,3 @@
     </div>
   </div>
 <% end %>
-</div>
-
-<%= link_to "New Blog Post", new_blog_post_path %>

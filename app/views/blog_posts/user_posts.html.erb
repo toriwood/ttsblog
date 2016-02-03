@@ -1,0 +1,20 @@
+<h1><%= @user.username.capitalize %>'s Page</h1>
+
+<p><strong>Name: <%= @user.name %></strong></p>
+<p><strong>Birthday: <%= @user.birthday.strftime("%m/%d/%Y") %></strong></p>
+
+<div class="row">
+	<% @user.blog_posts.each do |blog_post| %>
+	<div class="panel">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<%= link_to blog_post.title, blog_post %>
+			</div>
+			<div class="panel-body">
+				by <%= blog_post.user.username %>
+				<p><%= blog_post.blog_entry[0..250] %>...<%= link_to "Read more", blog_post %></p>
+			</div>	
+		</div>
+	</div>
+	<% end %>
+</div>

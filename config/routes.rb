@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :blog_posts
   
   root 'blog_posts#index'
+  get 'your_posts' => 'blog_posts#your_posts'
+  get 'user_posts' => 'blog_posts#user_posts'
  end
